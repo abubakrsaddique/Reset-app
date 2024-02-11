@@ -1,4 +1,3 @@
-// Banner.js
 import React, { useState } from 'react';
 import { ChakraProvider, Box, Flex, Heading, Button } from '@chakra-ui/react';
 import { MdVideoLibrary } from 'react-icons/md'; 
