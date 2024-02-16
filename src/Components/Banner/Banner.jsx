@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Box,
   Flex,
@@ -49,14 +50,16 @@ function Banner() {
               <Button variant="ghost" colorScheme="white">
                 Support
               </Button>
-              <Button
-                variant="ghost"
-                mr="2"
-                colorScheme="white"
-                bg="rgb(255 117 101)"
-              >
-                Login
-              </Button>
+              <Link to="/login">
+                <Button
+                  variant="ghost"
+                  mr="2"
+                  colorScheme="white"
+                  bg="rgb(255 117 101)"
+                >
+                  Login
+                </Button>
+              </Link>
             </Box>
           </Flex>
           <Flex flexDirection="column" alignItems="center" p="4">
