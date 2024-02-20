@@ -1,3 +1,16 @@
 .loginbtn:hover {
   background-color: rgb(255, 117, 101);
 }
+.Welcome {
+  line-height: 40px;
+  letter-spacing: 0.96px;
+
+  font-style: normal;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #fff;
+}

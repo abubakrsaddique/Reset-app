@@ -1,21 +1,21 @@
 import React from "react";
-import "./login.css";
-import { Link as RouterLink } from "react-router-dom";
+import image from "../../Components/video/3.jpg";
+import appleLogo from "../../Components/video/apple.webp";
+import googleLogo from "../../Components/video/google.png";
+import { Link } from "react-router-dom";
+import "./signup.css";
+
 import {
   Box,
   Flex,
   Heading,
-  Input,
   Button,
+  Input,
   FormControl,
-  Link,
   Text,
 } from "@chakra-ui/react";
-import image from "../../Components/video/3.jpg";
-import appleLogo from "../../Components/video/apple.webp";
-import googleLogo from "../../Components/video/google.png";
 
-function Login() {
+function Signup() {
   const backgroundImageStyle = {
     backgroundImage: `url(${image})`,
     backgroundSize: "cover",
@@ -81,22 +81,56 @@ function Login() {
         >
           <Heading
             as="h2"
-            fontSize={50}
+            fontSize={45}
             fontWeight="bold"
-            paddingRight="30%"
+            paddingRight="40%"
             mb="4"
           >
-            Log In
+            Sign Up
           </Heading>
 
-          <Text mb="4" fontWeight="bold" paddingRight="10%">
-            You don’t have an account?{" "}
-            <Link as={RouterLink} to="/signup" color="rgb(255,117,101)">
-              Sign Up
+          <Text mb="4" fontWeight="bold" paddingRight="27%">
+            Already have an account?{" "}
+            <Link to="/login" color="rgb(255,117,101)">
+              Log In
             </Link>
-            <Box />
           </Text>
-          <FormControl id="email" mb="4" width="50%">
+
+          <Heading
+            as="h3"
+            fontSize={25}
+            fontWeight="bold"
+            mb="4"
+            paddingRight="25%"
+          >
+            Create Your Account
+          </Heading>
+
+          <FormControl id="first-name" mb="4" width="60%" marginRight="5%">
+            <Input
+              fontWeight="bold"
+              type="text"
+              placeholder="First Name"
+              rounded="22px"
+              height="14"
+              bg="rgb(22,22,38)"
+              border={"none"}
+            />
+          </FormControl>
+
+          <FormControl id="last-name" mb="4" width="60%" marginRight="5%">
+            <Input
+              fontWeight="bold"
+              type="text"
+              placeholder="Last Name"
+              rounded="22px"
+              height="14"
+              bg="rgb(22,22,38)"
+              border={"none"}
+            />
+          </FormControl>
+
+          <FormControl id="email" mb="4" width="60%" marginRight="5%">
             <Input
               fontWeight="bold"
               type="email"
@@ -107,43 +141,46 @@ function Login() {
               border={"none"}
             />
           </FormControl>
-          <FormControl id="password" mb="4" width="50%">
+
+          <FormControl id="password" mb="4" width="60%" marginRight="5%">
             <Input
               fontWeight="bold"
               type="password"
-              placeholder="Enter your password"
+              placeholder="Enter your Password"
               rounded="22px"
               height="14"
               bg="rgb(22,22,38)"
               border={"none"}
             />
           </FormControl>
-          <Link
-            href="#"
-            fontSize="sm"
-            mb="4"
-            color="rgb(255,117,101)"
-            fontWeight="bold"
-            paddingRight="30%"
-          >
-            Forgot password?
-          </Link>
+
           <Button
             className="loginbtn"
             colorScheme="blue"
-            width="50%"
+            width="60%"
             bg="rgb(255,117,101)"
             fontWeight="bold"
             rounded="22px"
             height="14"
             _hover={{ bg: "rgb(255,117,101)" }}
+            mb="4"
+            marginRight="5%"
           >
-            Log In
+            Get Started
           </Button>
+
+          <Text
+            fontSize="sm"
+            paddingRight="5%"
+            color="rgb(124 126 129)"
+            fontWeight="bold"
+          >
+            SECURED CHECKOUT WITH 256-BIT SSL ENCRYPTION
+          </Text>
         </Flex>
       </Box>
     </Flex>
   );
 }
 
-export default Login;
+export default Signup;
