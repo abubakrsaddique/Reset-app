@@ -2,7 +2,9 @@ import React from "react";
 import image from "../../Components/video/3.jpg";
 import appleLogo from "../../Components/video/apple.webp";
 import googleLogo from "../../Components/video/google.png";
+import image2 from "../../Components/video/5.png";
 import { Link } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 import "./signup.css";
 
 import {
@@ -32,18 +34,32 @@ function Signup() {
           p="8"
           flexDirection="column"
         >
-          <Heading
-            className="Welcome"
-            as="h2"
-            fontSize={40}
-            fontWeight="bold"
-            mb="4"
-            cursor="pointer"
-            marginBottom="184"
-            marginLeft="6"
+          <Link as={RouterLink} to="/banner">
+            <Heading
+              className="Welcome"
+              as="h2"
+              fontSize={40}
+              fontWeight="bold"
+              mb="4"
+              cursor="pointer"
+              marginBottom="-70"
+              marginLeft="6"
+              marginTop="90"
+            >
+              WELCOME TO
+            </Heading>
+          </Link>
+          <Link
+            as={RouterLink}
+            to="/banner"
+            marginLeft="10"
+            marginBottom="100"
+            width="70%"
+            height="50"
+            marginTop="-3"
           >
-            WELCOME TO
-          </Heading>
+            <img src={image2} alt="Image2" style={{ cursor: "pointer" }} />
+          </Link>
         </Flex>
         <Flex
           position="absolute"

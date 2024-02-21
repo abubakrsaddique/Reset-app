@@ -12,6 +12,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import image from "../../Components/video/3.jpg";
+import image2 from "../../Components/video/5.png";
 import appleLogo from "../../Components/video/apple.webp";
 import googleLogo from "../../Components/video/google.png";
 
@@ -32,18 +33,31 @@ function Login() {
           p="8"
           flexDirection="column"
         >
-          <Heading
-            className="Welcome"
-            as="h2"
-            fontSize={40}
-            fontWeight="bold"
-            mb="4"
-            cursor="pointer"
-            marginBottom="184"
-            marginLeft="6"
+          <Link as={RouterLink} to="/banner">
+            <Heading
+              className="Welcome"
+              as="h2"
+              fontSize={40}
+              fontWeight="bold"
+              mb="4"
+              style={{ cursor: "pointer" }}
+              marginLeft="6"
+              marginBottom="-70"
+            >
+              WELCOME TO
+            </Heading>
+          </Link>
+          <Link
+            as={RouterLink}
+            to="/banner"
+            marginLeft="10"
+            marginBottom="220"
+            width="80%"
+            height="50"
+            marginTop="-3"
           >
-            WELCOME TO
-          </Heading>
+            <img src={image2} alt="Image2" style={{ cursor: "pointer" }} />
+          </Link>
         </Flex>
         <Flex
           position="absolute"
