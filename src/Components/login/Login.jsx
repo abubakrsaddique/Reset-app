@@ -56,7 +56,14 @@ function Login() {
             height="50"
             marginTop="-3"
           >
-            <img src={image2} alt="Image2" style={{ cursor: "pointer" }} />
+            <img
+              src={image2}
+              alt="Image2"
+              style={{
+                cursor: "pointer",
+                marginTop: "-25px",
+              }}
+            />
           </Link>
         </Flex>
         <Flex

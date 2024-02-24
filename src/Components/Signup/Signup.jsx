@@ -49,16 +49,17 @@ function Signup() {
               WELCOME TO
             </Heading>
           </Link>
-          <Link
-            as={RouterLink}
-            to="/banner"
-            marginLeft="10"
-            marginBottom="100"
-            width="70%"
-            height="50"
-            marginTop="-3"
-          >
-            <img src={image2} alt="Image2" style={{ cursor: "pointer" }} />
+          <Link as={RouterLink} to="/banner" height="50" marginTop="-3">
+            <img
+              src={image2}
+              alt="Image2"
+              style={{
+                cursor: "pointer",
+                marginLeft: "100px",
+                marginBottom: "97px",
+              }}
+              width="70%"
+            />
           </Link>
         </Flex>
         <Flex
