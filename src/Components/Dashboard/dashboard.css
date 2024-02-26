@@ -1,0 +1,12 @@
+.password {
+  margin-left: 76%;
+}
+.myplan {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -193px;
+}
+.plan-box {
+  margin-left: -140%;
+  width: 179%;
+}
