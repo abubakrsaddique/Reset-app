@@ -4,9 +4,36 @@
 .myplan {
   display: flex;
   justify-content: flex-end;
-  margin-top: -193px;
+  margin-top: -211px;
 }
 .plan-box {
   margin-left: -140%;
   width: 179%;
+}
+.age {
+  margin-left: 90%;
+}
+.Height {
+  margin-left: 80%;
+}
+.Weight {
+  margin-left: 81%;
+}
+.Goal {
+  margin-left: 75%;
+}
+.Amount {
+  margin-left: 60%;
+}
+.Credit {
+  margin-left: 56%;
+}
+.Card {
+  margin-left: 52%;
+}
+.Expiry {
+  margin-left: 69%;
+}
+.Email-Card {
+  margin-left: 56%;
 }

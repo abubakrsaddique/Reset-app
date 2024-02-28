@@ -21,6 +21,7 @@ function Dashboard() {
               width="220px"
               height="100px"
               marginLeft="-30px"
+              cursor="pointer"
             />
           </Box>
           <Box position="relative" display="flex" alignItems="center">
@@ -46,6 +47,7 @@ function Dashboard() {
             alt="edit plus icon"
             width="100px"
             height="100px"
+            cursor="pointer"
           />
         </Flex>
         <Flex justifyContent="center">
@@ -114,6 +116,7 @@ function Dashboard() {
                   lineHeight="6"
                   bg="none"
                   _hover="none"
+                  cursor="pointer"
                 >
                   Edit
                 </Button>
@@ -122,6 +125,7 @@ function Dashboard() {
             <Box
               marginLeft="160px"
               width="37%"
+              height="145px"
               bg="rgb(22,22,38)"
               rounded="24px"
               p="6"
@@ -143,6 +147,7 @@ function Dashboard() {
                   lineHeight="5"
                   color="rgb(141,157,188)"
                   marginLeft="60%"
+                  paddingTop="12px"
                 >
                   trialmonth@gmail.com
                 </Text>
@@ -172,7 +177,7 @@ function Dashboard() {
         </section>
         <section className="myplan">
           <Box>
-            <Flex justify="between" alignItems="center" gap="122%">
+            <Flex justify="between" alignItems="center" gap="128%">
               <Text
                 fontSize="25px"
                 fontWeight="bold"
@@ -190,6 +195,7 @@ function Dashboard() {
                 lineHeight="6"
                 bg="none"
                 _hover="none"
+                cursor="pointer"
               >
                 Edit
               </Button>
@@ -227,6 +233,302 @@ function Dashboard() {
                 </Text>
               </Flex>
             </Box>
+          </Box>
+        </section>
+        <section>
+          <Box py="6" px="4">
+            <Flex marginLeft="141px">
+              <Box maxW="530px" w="100%" minW="450px" minH="450px">
+                <Flex
+                  justify="between"
+                  alignItems="center"
+                  marginTop="10%"
+                  whiteSpace="nowrap"
+                >
+                  <Text
+                    fontSize="25px"
+                    fontWeight="bold"
+                    lineHeight="6"
+                    color="white"
+                    marginLeft="8px"
+                  >
+                    My Profile
+                  </Text>
+                  <Button
+                    type="button"
+                    color="rgb(255,117,101)"
+                    fontSize="20px"
+                    fontWeight="bold"
+                    lineHeight="6"
+                    bg="none"
+                    _hover="none"
+                    marginLeft="63.5%"
+                    cursor="pointer"
+                  >
+                    Edit
+                  </Button>
+                </Flex>
+                <Box
+                  bg="rgb(22,22,38)"
+                  rounded="24px"
+                  p="6"
+                  mt="6"
+                  boxShadow="0px 4px 10px rgba(0, 0, 0, 0.1)"
+                >
+                  <Flex wrap="wrap" justify="between" alignItems="center">
+                    <Text
+                      fontSize="15px"
+                      fontWeight="bold"
+                      lineHeight="5"
+                      color="white"
+                      paddingBottom="10px"
+                      paddingTop="10px"
+                    >
+                      Age
+                    </Text>
+                    <Text
+                      fontSize="15px"
+                      fontWeight="bold"
+                      lineHeight="5"
+                      color="rgb(141,157,188)"
+                      paddingTop="10px"
+                      paddingBottom="10px"
+                      className="age"
+                    >
+                      23
+                    </Text>
+                  </Flex>
+                  <Divider my="5" />
+                  <Flex wrap="wrap" justify="between" alignItems="center">
+                    <Text
+                      fontSize="15px"
+                      fontWeight="bold"
+                      lineHeight="5"
+                      color="white"
+                      paddingBottom="10px"
+                      paddingTop="10px"
+                    >
+                      Height
+                    </Text>
+                    <Text
+                      fontSize="15px"
+                      fontWeight="bold"
+                      lineHeight="5"
+                      color="rgb(141,157,188)"
+                      paddingTop="10px"
+                      paddingBottom="10px"
+                      className="Height"
+                    >
+                      5ft 0in
+                    </Text>
+                  </Flex>
+                  <Divider my="5" />
+                  <Flex wrap="wrap" justify="between" alignItems="center">
+                    <Text
+                      fontSize="15px"
+                      fontWeight="bold"
+                      lineHeight="5"
+                      color="white"
+                      paddingTop="10px"
+                    >
+                      Weight
+                    </Text>
+                    <Text
+                      fontSize="15px"
+                      fontWeight="bold"
+                      lineHeight="5"
+                      color="rgb(141,157,188)"
+                      paddingTop="10px"
+                      className="Weight"
+                    >
+                      70 kg
+                    </Text>
+                  </Flex>
+                  <Divider my="5" />
+                  <Flex wrap="wrap" justify="between" alignItems="center">
+                    <Text
+                      fontSize="15px"
+                      fontWeight="bold"
+                      lineHeight="5"
+                      color="white"
+                      paddingTop="10px"
+                    >
+                      Goal
+                    </Text>
+                    <Text
+                      fontSize="15px"
+                      fontWeight="bold"
+                      lineHeight="5"
+                      color="rgb(141,157,188)"
+                      paddingTop="10px"
+                      className="Goal"
+                    >
+                      Lose Weight
+                    </Text>
+                  </Flex>
+                  <Divider my="5" />
+                  <Flex wrap="wrap" justify="between" alignItems="center">
+                    <Text
+                      fontSize="15px"
+                      fontWeight="bold"
+                      lineHeight="5"
+                      color="white"
+                      paddingTop="10px"
+                    >
+                      Daily Meal Amount
+                    </Text>
+                    <Text
+                      fontSize="15px"
+                      fontWeight="bold"
+                      lineHeight="5"
+                      color="rgb(141,157,188)"
+                      paddingTop="10px"
+                      className="Amount"
+                    >
+                      6 meals
+                    </Text>
+                  </Flex>
+                </Box>
+              </Box>
+            </Flex>
+          </Box>
+        </section>
+        <section className="my-payment-method">
+          <Box py="6" px="4" marginTop="-37%">
+            <Flex justifyContent="flex-end" marginTop="-2%" marginRight="157px">
+              <Box maxW="510px" w="100%" minW="450px" minH="450px">
+                <Flex
+                  justify="between"
+                  alignItems="center"
+                  whiteSpace="nowrap"
+                  gap="44.5%"
+                >
+                  <Text
+                    fontSize="25px"
+                    fontWeight="bold"
+                    lineHeight="6"
+                    color="white"
+                  >
+                    My Payment Method
+                  </Text>
+                  <Button
+                    type="button"
+                    color="rgb(255,117,101)"
+                    fontSize="20px"
+                    fontWeight="bold"
+                    lineHeight="6"
+                    bg="none"
+                    _hover="none"
+                    cursor="pointer"
+                  >
+                    Edit
+                  </Button>
+                </Flex>
+                <Box
+                  bg="rgb(22,22,38)"
+                  rounded="24px"
+                  p="6"
+                  mt="6"
+                  boxShadow="0px 4px 10px rgba(0, 0, 0, 0.1)"
+                >
+                  <Flex wrap="wrap" justify="between" alignItems="center">
+                    <Text
+                      fontSize="15px"
+                      fontWeight="bold"
+                      lineHeight="5"
+                      color="white"
+                      paddingBottom="10px"
+                      paddingTop="10px"
+                    >
+                      Payment Method
+                    </Text>
+                    <Text
+                      fontSize="15px"
+                      fontWeight="bold"
+                      lineHeight="5"
+                      color="rgb(141,157,188)"
+                      paddingTop="10px"
+                      paddingBottom="10px"
+                      className="Credit"
+                    >
+                      Credit Card
+                    </Text>
+                  </Flex>
+                  <Divider my="5" />
+                  <Flex wrap="wrap" justify="between" alignItems="center">
+                    <Text
+                      fontSize="15px"
+                      fontWeight="bold"
+                      lineHeight="5"
+                      color="white"
+                      paddingBottom="10px"
+                      paddingTop="10px"
+                    >
+                      Number Card
+                    </Text>
+                    <Text
+                      fontSize="15px"
+                      fontWeight="bold"
+                      lineHeight="5"
+                      color="rgb(141,157,188)"
+                      paddingTop="10px"
+                      paddingBottom="10px"
+                      className="Card"
+                    >
+                      •••• •••• •••• 1234
+                    </Text>
+                  </Flex>
+                  <Divider my="5" />
+                  <Flex wrap="wrap" justify="between" alignItems="center">
+                    <Text
+                      fontSize="15px"
+                      fontWeight="bold"
+                      lineHeight="5"
+                      color="white"
+                      paddingBottom="10px"
+                      paddingTop="10px"
+                    >
+                      Expiry Date
+                    </Text>
+                    <Text
+                      fontSize="15px"
+                      fontWeight="bold"
+                      lineHeight="5"
+                      color="rgb(141,157,188)"
+                      paddingTop="10px"
+                      paddingBottom="10px"
+                      className="Expiry"
+                    >
+                      01/2000
+                    </Text>
+                  </Flex>
+                  <Divider my="5" />
+                  <Flex wrap="wrap" justify="between" alignItems="center">
+                    <Text
+                      fontSize="15px"
+                      fontWeight="bold"
+                      lineHeight="5"
+                      color="white"
+                      paddingBottom="10px"
+                      paddingTop="10px"
+                    >
+                      Email
+                    </Text>
+                    <Text
+                      fontSize="15px"
+                      fontWeight="bold"
+                      lineHeight="5"
+                      color="rgb(141,157,188)"
+                      paddingTop="10px"
+                      paddingBottom="10px"
+                      className="Email-Card"
+                    >
+                      trialmonth@gmail.com
+                    </Text>
+                  </Flex>
+                </Box>
+              </Box>
+            </Flex>
           </Box>
         </section>
       </main>
