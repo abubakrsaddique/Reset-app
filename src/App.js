@@ -4,6 +4,7 @@ import Banner from "./Components/Banner/Banner";
 import Signup from "./Components/Signup/Signup";
 import Login from "./Components/Login/Login";
 import Dashboard from "./Components/Dashboard/Dashboard";
+import ProfileForm from "./Components/ProfileForm/ProfileForm";
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
     //     <Route path="/banner" element={<Banner />} />
     //   </Routes>
     // </Router>
-    <Dashboard />
+    // <Dashboard />
+    <ProfileForm />
   );
 }
 
