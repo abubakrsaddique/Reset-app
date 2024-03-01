@@ -1,4 +1,15 @@
-import { Box, Button, Divider, Flex, Input, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Input,
+  Text,
+  NumberInput,
+  NumberInputField,
+  NumberInputStepper,
+  NumberIncrementStepper,
+  NumberDecrementStepper,
+} from "@chakra-ui/react";
 import close from "../video/close.png";
 
 function ProfileForm() {
@@ -43,25 +54,56 @@ function ProfileForm() {
           </Flex>
           <Flex items="center" w="full" marginTop="12%">
             <form>
-              <Input
-                required
-                min="0"
-                placeholder="Age"
-                w="full"
-                h="56px"
-                py="2"
-                px="6"
-                rounded="22px"
-                bg="rgb(22,22,38)"
-                darkBg="#161626"
-                color="#98A7C3"
-                fontWeight="medium"
-                type="number"
-                value="23"
-                name="age"
+              <NumberInput
+                defaultValue={23}
+                min={0}
+                step={1}
                 marginBottom="20px"
-                border="none"
-              />
+              >
+                <NumberInputField
+                  w="full"
+                  h="56px"
+                  py="2"
+                  px="6"
+                  rounded="22px"
+                  bg="rgb(22,22,38)"
+                  darkBg="#161626"
+                  color="#98A7C3"
+                  fontWeight="medium"
+                  border="none"
+                  _hover={{ borderColor: "none" }}
+                  _focus={{
+                    outline: "none",
+                    borderColor: "none",
+                    boxShadow: "none",
+                  }}
+                />
+                <NumberInputStepper top="12px" right="12px">
+                  <Box>
+                    <NumberIncrementStepper
+                      h="15px"
+                      w="12px"
+                      bg="rgb(22,22,38)"
+                      darkBg="#161626"
+                      color="#98A7C3"
+                      fontWeight="medium"
+                      border="none"
+                      _hover={{ bg: "rgb(30, 30, 49)" }}
+                    />
+                    <NumberDecrementStepper
+                      h="15px"
+                      w="12px"
+                      bg="rgb(22,22,38)"
+                      darkBg="#161626"
+                      color="#98A7C3"
+                      fontWeight="medium"
+                      border="none"
+                      _hover={{ bg: "rgb(30, 30, 49)" }}
+                    />
+                  </Box>
+                </NumberInputStepper>
+              </NumberInput>
+
               <Box
                 pos="relative"
                 flex="1"
@@ -74,7 +116,7 @@ function ProfileForm() {
                   <Input
                     required
                     placeholder="Feet"
-                    w="49%"
+                    w="55%"
                     h="56px"
                     py="2"
                     px="6"
@@ -90,9 +132,9 @@ function ProfileForm() {
                   <Input
                     required
                     placeholder="Inches"
-                    w="49%"
+                    w="55%"
                     h="56px"
-                    ml="1"
+                    marginRight="40%"
                     py="2"
                     px="6"
                     rounded="22px"
