@@ -1,11 +1,24 @@
-import { Flex, Box, Button, Image, Text, Divider } from "@chakra-ui/react";
 import reset from "../../Components/video/reset.png";
 import image3 from "../../Components/video/7.webp";
 import appleLogo from "../../Components/video/apple.webp";
 import googleLogo from "../../Components/video/google.png";
 import "./dashboard.css";
-
+import {
+  Box,
+  Button,
+  Flex,
+  Text,
+  Image,
+  Divider,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalBody,
+} from "@chakra-ui/react";
+import { useDisclosure } from "@chakra-ui/react";
+import ProfileForm from "../ProfileForm/ProfileForm";
 function Dashboard() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <div style={{ backgroundColor: "rgb(4,4,21)", height: "200vh" }}>
       <main>
@@ -264,6 +277,7 @@ function Dashboard() {
                     _hover="none"
                     marginLeft="63.5%"
                     cursor="pointer"
+                    onClick={onOpen}
                   >
                     Edit
                   </Button>
@@ -275,6 +289,15 @@ function Dashboard() {
                   mt="6"
                   boxShadow="0px 4px 10px rgba(0, 0, 0, 0.1)"
                 >
+                  <Modal isOpen={isOpen} onClose={onClose}>
+                    <ModalOverlay />
+                    <ModalContent background="none">
+                      <ModalBody>
+                        <ProfileForm onClose={onClose} />
+                      </ModalBody>
+                    </ModalContent>
+                  </Modal>
+
                   <Flex wrap="wrap" justify="between" alignItems="center">
                     <Text
                       fontSize="15px"

@@ -8,16 +8,16 @@ import ProfileForm from "./Components/ProfileForm/ProfileForm";
 
 function App() {
   return (
-    // <Router>
-    //   <Routes>
-    //     <Route path="/" element={<Banner />} />
-    //     <Route path="/login" element={<Login />} />
-    //     <Route path="/signup" element={<Signup />} />
-    //     <Route path="/banner" element={<Banner />} />
-    //   </Routes>
-    // </Router>
-    // <Dashboard />
-    <ProfileForm />
+    <Router>
+      <Routes>
+        <Route path="/" element={<Banner />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/profileform" element={<ProfileForm />} />
+        <Route path="/banner" element={<Banner />} />
+      </Routes>
+    </Router>
   );
 }
 

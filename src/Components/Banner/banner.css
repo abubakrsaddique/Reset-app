@@ -9,6 +9,17 @@
   color: white;
 }
 
+.banner-content video {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.mob {
+  display: none;
+}
+
 .banner-text {
   margin-right: auto;
 }
@@ -52,4 +63,49 @@
 
 .banner-content img {
   cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .banner-content {
+    padding: 0;
+    position: relative;
+  }
+
+  .banner-content video {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  .darkmode {
+    display: none;
+  }
+
+  .screen {
+    display: none;
+  }
+  .mob {
+    display: flex;
+    margin-left: 92%;
+    display: flex;
+    width: 20%;
+  }
+  .fitness-heading {
+    font-size: 80px;
+  }
+
+  .culture-heading {
+    font-size: 90px;
+  }
+
+  .font-normal {
+    font-size: 14px;
+  }
+
+  .button-wrapper {
+    flex-direction: column;
+  }
 }

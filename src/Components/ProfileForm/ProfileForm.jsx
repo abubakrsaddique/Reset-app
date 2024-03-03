@@ -12,10 +12,10 @@ import {
 } from "@chakra-ui/react";
 import close from "../video/close.png";
 
-function ProfileForm() {
+function ProfileForm({ onClose }) {
   return (
     <Box>
-      <Flex align="center" justify="center">
+      <Flex align="center" justify="center" background="none">
         <Box
           w="full"
           maxW="456px"
@@ -40,6 +40,7 @@ function ProfileForm() {
               position="absolute"
               top="40px"
               right="15px"
+              onClick={onClose}
             >
               <img
                 alt=""
@@ -172,6 +173,7 @@ function ProfileForm() {
                     textAlign="center"
                     justify="center"
                     align="center"
+                    lineHeight="40px"
                   >
                     Cm
                   </Box>
@@ -190,31 +192,87 @@ function ProfileForm() {
                     textAlign="center"
                     justify="center"
                     align="center"
+                    lineHeight="40px"
                   >
                     Ft
                   </Box>
                 </Flex>
               </Box>
-              <Input
-                required
-                placeholder="Weight"
-                w="full"
-                h="56px"
-                py="2"
-                px="6"
-                rounded="22px"
-                bg="rgb(22,22,38)"
-                darkBg="#161626"
-                color="#98A7C3"
-                fontWeight="medium"
-                type="number"
-                value="70"
-                name="weight"
-                border="none"
-                marginTop="20px"
-              />
+              <Box position="relative">
+                <Flex align="center">
+                  <Input
+                    required
+                    placeholder="Weight"
+                    w="full"
+                    h="56px"
+                    py="2"
+                    px="6"
+                    rounded="22px"
+                    bg="rgb(22,22,38)"
+                    darkBg="#161626"
+                    color="#98A7C3"
+                    fontWeight="medium"
+                    type="number"
+                    value="70"
+                    name="weight"
+                    border="none"
+                    marginTop="20px"
+                  />
+                  <Flex
+                    position="absolute"
+                    right="0"
+                    bottom="5px"
+                    rounded="22px"
+                    bg="rgb(44, 44, 56)"
+                    py="1"
+                    px="2"
+                    alignItems="center"
+                  >
+                    <Box
+                      ml="4px"
+                      flex="1"
+                      h="40px"
+                      w="64px"
+                      cursor="pointer"
+                      rounded="16px"
+                      color="white"
+                      bg="rgb(255,117,101)"
+                      darkBg="accent"
+                      darkColor="white"
+                      fontWeight="extrabold"
+                      fontSize="16px"
+                      textAlign="center"
+                      justify="center"
+                      align="center"
+                      lineHeight="40px"
+                    >
+                      Kg
+                    </Box>
+                    <Box
+                      mr="4px"
+                      flex="1"
+                      h="40px"
+                      w="64px"
+                      cursor="pointer"
+                      rounded="16px"
+                      color="white"
+                      bg="rgb(255,117,101)"
+                      darkBg="#1E2534"
+                      fontWeight="extrabold"
+                      fontSize="16px"
+                      textAlign="center"
+                      justify="center"
+                      align="center"
+                      lineHeight="40px"
+                    >
+                      Lbs
+                    </Box>
+                  </Flex>
+                </Flex>
+              </Box>
+
               <Flex flexDir="column" my="4">
-                <Text fontSize="16px" fontWeight="semibold" color="white">
+                <Text fontSize="25px" fontWeight="bold" color="white">
                   Goal
                 </Text>
                 <Flex
@@ -226,7 +284,9 @@ function ProfileForm() {
                   fontSize="16px"
                   fontWeight="medium"
                 >
-                  <Text color="white">Lose Weight</Text>
+                  <Text color="white" fontWeight="bold">
+                    Lose Weight
+                  </Text>
                   <Box
                     h="15px"
                     w="15px"
@@ -245,7 +305,9 @@ function ProfileForm() {
                   fontSize="16px"
                   fontWeight="medium"
                 >
-                  <Text color="white">Maintain Weight</Text>
+                  <Text color="white" fontWeight="bold">
+                    Maintain Weight
+                  </Text>
                   <Box
                     h="15px"
                     w="15px"
@@ -264,7 +326,9 @@ function ProfileForm() {
                   fontSize="16px"
                   fontWeight="medium"
                 >
-                  <Text color="white">Gain Weight</Text>
+                  <Text color="white" fontWeight="bold">
+                    Gain Weight
+                  </Text>
                   <Box
                     h="15px"
                     w="15px"
@@ -283,7 +347,9 @@ function ProfileForm() {
                   fontSize="16px"
                   fontWeight="medium"
                 >
-                  <Text color="white">Just Exploring</Text>
+                  <Text color="white" fontWeight="bold">
+                    Just Exploring
+                  </Text>
                   <Box
                     h="15px"
                     w="15px"
@@ -295,12 +361,7 @@ function ProfileForm() {
                 </Flex>
               </Flex>
               <Box>
-                <Text
-                  fontSize="20px"
-                  fontWeight="semibold"
-                  mt="25px"
-                  color="white"
-                >
+                <Text fontSize="20px" fontWeight="bold" mt="25px" color="white">
                   Daily Meal Amount
                 </Text>
                 <Flex align="center" justify="center" gap="20px" mt="4">
@@ -313,11 +374,10 @@ function ProfileForm() {
                     justify="center"
                     rounded="16px"
                     fontSize="20px"
-                    fontWeight="semibold"
+                    fontWeight="bold"
                     bg="rgb(255,117,101)"
-                    darkBg="#161626"
                     paddingTop="3px"
-                    color="#98AFC3"
+                    color="white"
                     paddingLeft="18px"
                   >
                     3
@@ -331,10 +391,9 @@ function ProfileForm() {
                     justify="center"
                     rounded="16px"
                     fontSize="20px"
-                    fontWeight="semibold"
+                    fontWeight="bold"
                     bg="rgb(255,117,101)"
-                    darkBg="#161626"
-                    color="#98AFC3"
+                    color="white"
                     paddingLeft="18px"
                     paddingTop="3px"
                   >
@@ -350,11 +409,10 @@ function ProfileForm() {
                     rounded="16px"
                     paddingTop="3px"
                     fontSize="20px"
-                    fontWeight="semibold"
+                    fontWeight="bold"
                     bg="rgb(255,117,101)"
-                    darkBg="#161626"
                     paddingLeft="18px"
-                    color="#98AFC3"
+                    color="white"
                   >
                     5
                   </Box>
@@ -369,10 +427,9 @@ function ProfileForm() {
                     justify="center"
                     rounded="16px"
                     fontSize="20px"
-                    fontWeight="semibold"
+                    fontWeight="bold"
                     bg="rgb(255,117,101)"
-                    darkBg="#161626"
-                    color="#98AFC3"
+                    color="white"
                   >
                     6
                   </Box>

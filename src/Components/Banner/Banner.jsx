@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { HamburgerIcon, SmallCloseIcon } from "@chakra-ui/icons";
 import {
   Box,
   Flex,
@@ -12,6 +13,8 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
+  useDisclosure,
+  IconButton,
 } from "@chakra-ui/react";
 import "./banner.css";
 import backgroundVideo from "../../Components/video/1.mp4";
@@ -19,6 +22,7 @@ import image2 from "../../Components/video/2.webp";
 
 function Banner() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
@@ -28,11 +32,6 @@ function Banner() {
           loop
           muted
           style={{
-            width: "100%",
-            height: "auto",
-            position: "fixed",
-            top: 0,
-            left: 0,
             zIndex: -1,
           }}
         >
@@ -41,12 +40,12 @@ function Banner() {
         </video>
         <Box zIndex="1">
           <Flex justifyContent="space-between" alignItems="center" p="4">
-            <Box>
+            <Box className="darkmode">
               <Heading as="h1" size="md">
                 Dark Mode has arrived
               </Heading>
             </Box>
-            <Box>
+            <Box className="screen">
               <Button variant="ghost" colorScheme="white">
                 Support
               </Button>
@@ -60,6 +59,62 @@ function Banner() {
                   Login
                 </Button>
               </Link>
+            </Box>
+            <Box className="mob" position="relative">
+              {isOpen ? (
+                <IconButton
+                  aria-label="Close"
+                  icon={<SmallCloseIcon />}
+                  onClick={onClose}
+                  position="absolute"
+                  top="0"
+                  right="0"
+                  zIndex="5"
+                />
+              ) : (
+                <IconButton
+                  background="none"
+                  color="white"
+                  _hover="none"
+                  aria-label="Open"
+                  icon={<HamburgerIcon />}
+                  onClick={onOpen}
+                />
+              )}
+              <Modal isOpen={isOpen} onClose={onClose}>
+                <ModalOverlay />
+                <ModalContent
+                  width="100%"
+                  height="25vh"
+                  paddingTop="16px"
+                  bottom="80px"
+                  background="rgb(31,31,47)"
+                  borderRadius="33px"
+                >
+                  <ModalBody>
+                    <Button
+                      variant="ghost"
+                      colorScheme="white"
+                      onClick={onClose}
+                      color="white"
+                    >
+                      Support
+                    </Button>
+                    <Link to="/login">
+                      <Button
+                        variant="ghost"
+                        mr="2"
+                        colorScheme="white"
+                        bg="rgb(255 117 101)"
+                        onClick={onClose}
+                        color="white"
+                      >
+                        Login
+                      </Button>
+                    </Link>
+                  </ModalBody>
+                </ModalContent>
+              </Modal>
             </Box>
           </Flex>
           <Flex flexDirection="column" alignItems="center" p="4">
