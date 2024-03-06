@@ -67,9 +67,9 @@ function Banner() {
                   icon={<SmallCloseIcon />}
                   onClick={onClose}
                   position="absolute"
-                  top="0"
-                  right="0"
-                  zIndex="5"
+                  top="4px"
+                  right="4px"
+                  zIndex="999"
                 />
               ) : (
                 <IconButton
@@ -79,17 +79,21 @@ function Banner() {
                   aria-label="Open"
                   icon={<HamburgerIcon />}
                   onClick={onOpen}
+                  position="relative"
+                  zIndex="1"
                 />
               )}
-              <Modal isOpen={isOpen} onClose={onClose}>
+              <Modal isOpen={isOpen} onClose={onClose} z>
                 <ModalOverlay />
                 <ModalContent
                   width="100%"
                   height="25vh"
                   paddingTop="16px"
-                  bottom="80px"
+                  bottom="60%"
                   background="rgb(31,31,47)"
                   borderRadius="33px"
+                  position="absolute"
+                  zIndex="99"
                 >
                   <ModalBody>
                     <Button

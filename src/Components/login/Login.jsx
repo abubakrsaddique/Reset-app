@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./login.css";
 import { Link as RouterLink } from "react-router-dom";
 import {
@@ -16,7 +16,30 @@ import image2 from "../../Components/video/5.png";
 import appleLogo from "../../Components/video/apple.webp";
 import googleLogo from "../../Components/video/google.png";
 
+import { auth } from "../../firebase";
+
 function Login() {
+  const [email] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
+
+  const handleLogin = async () => {
+    try {
+      await auth.signInWithEmailAndPassword(email.trim(), password);
+    } catch (error) {
+      if (error.code === "auth/user-not-found") {
+        try {
+          await auth.createUserWithEmailAndPassword(email.trim(), password);
+          await auth.signInWithEmailAndPassword(email.trim(), password);
+        } catch (error) {
+          setError(error.message);
+        }
+      } else {
+        setError(error.message);
+      }
+    }
+  };
+
   const backgroundImageStyle = {
     backgroundImage: `url(${image})`,
     backgroundSize: "cover",
@@ -137,6 +160,8 @@ function Login() {
               height="14"
               bg="rgb(22,22,38)"
               border={"none"}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </FormControl>
           <Link
@@ -149,6 +174,7 @@ function Login() {
           >
             Forgot password?
           </Link>
+          {error && <Text color="red">{error}</Text>}
           <Button
             className="loginbtn"
             colorScheme="blue"
@@ -158,6 +184,7 @@ function Login() {
             rounded="22px"
             height="14"
             _hover={{ bg: "rgb(255,117,101)" }}
+            onClick={handleLogin}
           >
             Log In
           </Button>

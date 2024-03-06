@@ -7,6 +7,9 @@ import { Link } from "react-router-dom";
 import { Link as RouterLink } from "react-router-dom";
 import "./signup.css";
 
+import { firestore, auth } from "../../firebase";
+import { useNavigate } from "react-router-dom";
+
 import {
   Box,
   Flex,
@@ -18,6 +21,37 @@ import {
 } from "@chakra-ui/react";
 
 function Signup() {
+  const navigate = useNavigate();
+
+  const handleSignup = async () => {
+    try {
+      const firstName = document.getElementById("first-name").value;
+      const lastName = document.getElementById("last-name").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      console.log("First Name:", firstName);
+      console.log("Last Name:", lastName);
+      console.log("Email:", email);
+      console.log("Password:", password);
+
+      const userCredential = await auth.createUserWithEmailAndPassword(
+        email,
+        password
+      );
+
+      await firestore.collection("users").doc(userCredential.user.uid).set({
+        firstName,
+        lastName,
+        email,
+      });
+
+      navigate("/dashboard");
+    } catch (error) {
+      console.error("Error signing up:", error);
+    }
+  };
+
   const backgroundImageStyle = {
     backgroundImage: `url(${image})`,
     backgroundSize: "cover",
@@ -182,6 +216,7 @@ function Signup() {
             _hover={{ bg: "rgb(255,117,101)" }}
             mb="4"
             marginRight="5%"
+            onClick={handleSignup}
           >
             Get Started
           </Button>
