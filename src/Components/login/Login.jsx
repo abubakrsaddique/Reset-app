@@ -15,31 +15,28 @@ import image from "../../Components/video/3.jpg";
 import image2 from "../../Components/video/5.png";
 import appleLogo from "../../Components/video/apple.webp";
 import googleLogo from "../../Components/video/google.png";
-
+import { useNavigate } from "react-router-dom";
 import { auth } from "../../firebase";
 
 function Login() {
-  const [email] = useState("");
+  const navigate = useNavigate();
+
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(null);
+  const [error, setError] = useState("");
 
   const handleLogin = async () => {
     try {
-      await auth.signInWithEmailAndPassword(email.trim(), password);
+      await auth.signInWithEmailAndPassword(email, password);
+
+      navigate("/dashboard");
     } catch (error) {
-      if (error.code === "auth/user-not-found") {
-        try {
-          await auth.createUserWithEmailAndPassword(email.trim(), password);
-          await auth.signInWithEmailAndPassword(email.trim(), password);
-        } catch (error) {
-          setError(error.message);
-        }
-      } else {
-        setError(error.message);
-      }
+      console.error("Login Error:", error);
+      setError(
+        "Failed to log in. Please check your credentials and try again."
+      );
     }
   };
-
   const backgroundImageStyle = {
     backgroundImage: `url(${image})`,
     backgroundSize: "cover",
@@ -149,6 +146,8 @@ function Login() {
               height="14"
               bg="rgb(22,22,38)"
               border={"none"}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </FormControl>
           <FormControl id="password" mb="4" width="50%">
@@ -174,7 +173,7 @@ function Login() {
           >
             Forgot password?
           </Link>
-          {error && <Text color="red">{error}</Text>}
+
           <Button
             className="loginbtn"
             colorScheme="blue"
@@ -185,6 +184,7 @@ function Login() {
             height="14"
             _hover={{ bg: "rgb(255,117,101)" }}
             onClick={handleLogin}
+            type="button"
           >
             Log In
           </Button>

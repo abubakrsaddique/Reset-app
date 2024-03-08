@@ -17,8 +17,24 @@ import {
 } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
 import ProfileForm from "../ProfileForm/ProfileForm";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthContext";
+import { useAuth } from "../../contexts/AuthContext";
+
 function Dashboard() {
+  const navigate = useNavigate();
+  const { logout, isLoggedIn } = useAuth();
+
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const handleResetClick = () => {
+    navigate("/banner", { state: { isLoggedIn } });
+  };
+
+  const handleLogoutClick = () => {
+    logout();
+    navigate("/banner");
+  };
+
   return (
     <div style={{ backgroundColor: "rgb(4,4,21)", height: "200vh" }}>
       <main>
@@ -35,10 +51,15 @@ function Dashboard() {
               height="100px"
               marginLeft="-30px"
               cursor="pointer"
+              onClick={handleResetClick}
             />
           </Box>
           <Box position="relative" display="flex" alignItems="center">
-            <Button backgroundColor="transparent" _hover="none">
+            <Button
+              backgroundColor="transparent"
+              _hover="none"
+              onClick={handleLogoutClick}
+            >
               <Text
                 fontSize="18px"
                 py="2"

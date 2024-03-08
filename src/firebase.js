@@ -5,6 +5,7 @@ import "firebase/compat/auth";
 const firebaseConfig = {
   apiKey: "AIzaSyAIGAqmqeM65ZEwM4ZQfbIdsScqhKWG9Ew",
   authDomain: "reset-app-260c7.firebaseapp.com",
+  databaseURL: "https://reset-app-260c7-default-rtdb.firebaseio.com",
   projectId: "reset-app-260c7",
   storageBucket: "reset-app-260c7.appspot.com",
   messagingSenderId: "138551850374",
@@ -12,9 +13,14 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+} else {
+  firebase.app();
+}
 
-export const firestore = firebase.firestore();
-export const auth = firebase.auth();
+const firestore = firebase.firestore();
+const auth = firebase.auth();
 
+export { firestore, auth };
 export default firebase;
