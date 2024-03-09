@@ -30,6 +30,12 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/profileform" element={<ProfileForm />} />
         <Route path="/banner" element={<Banner />} />
+        <Route
+          path="*"
+          element={
+            isLoggedIn ? <Navigate to="/dashboard" /> : <Navigate to="/login" />
+          }
+        />
       </Routes>
     </Router>
   );

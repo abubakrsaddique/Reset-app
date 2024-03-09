@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { HamburgerIcon, SmallCloseIcon } from "@chakra-ui/icons";
 import {
   Box,
@@ -16,6 +16,7 @@ import {
   useDisclosure,
   IconButton,
 } from "@chakra-ui/react";
+import { useAuth } from "../../contexts/AuthContext";
 import "./banner.css";
 import backgroundVideo from "../../Components/video/1.mp4";
 import image2 from "../../Components/video/2.webp";
@@ -23,6 +24,11 @@ import image2 from "../../Components/video/2.webp";
 function Banner() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isLoggedIn } = useAuth();
+  const navigate = useNavigate();
+  const handleResetImageClick = () => {
+    navigate("/banner");
+  };
 
   return (
     <>
@@ -46,19 +52,34 @@ function Banner() {
               </Heading>
             </Box>
             <Box className="screen">
-              <Button variant="ghost" colorScheme="white">
-                Support
-              </Button>
-              <Link to="/login">
-                <Button
-                  variant="ghost"
-                  mr="2"
-                  colorScheme="white"
-                  bg="rgb(255 117 101)"
-                >
-                  Login
-                </Button>
-              </Link>
+              {isLoggedIn ? (
+                <Link to="/dashboard">
+                  <Button
+                    variant="ghost"
+                    mr="2"
+                    colorScheme="white"
+                    bg="rgb(255 117 101)"
+                  >
+                    Dashboard
+                  </Button>
+                </Link>
+              ) : (
+                <>
+                  <Button variant="ghost" colorScheme="white">
+                    Support
+                  </Button>
+                  <Link to="/login">
+                    <Button
+                      variant="ghost"
+                      mr="2"
+                      colorScheme="white"
+                      bg="rgb(255 117 101)"
+                    >
+                      Login
+                    </Button>
+                  </Link>
+                </>
+              )}
             </Box>
             <Box className="mob" position="relative">
               {isOpen ? (
@@ -83,7 +104,7 @@ function Banner() {
                   zIndex="1"
                 />
               )}
-              <Modal isOpen={isOpen} onClose={onClose} z>
+              <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
                 <ModalContent
                   width="100%"
@@ -96,26 +117,34 @@ function Banner() {
                   zIndex="99"
                 >
                   <ModalBody>
-                    <Button
-                      variant="ghost"
-                      colorScheme="white"
-                      onClick={onClose}
-                      color="white"
-                    >
-                      Support
-                    </Button>
-                    <Link to="/login">
-                      <Button
-                        variant="ghost"
-                        mr="2"
-                        colorScheme="white"
-                        bg="rgb(255 117 101)"
-                        onClick={onClose}
-                        color="white"
-                      >
-                        Login
-                      </Button>
-                    </Link>
+                    {isLoggedIn ? (
+                      <Link to="/dashboard">
+                        <Button
+                          variant="ghost"
+                          mr="2"
+                          colorScheme="white"
+                          bg="rgb(255 117 101)"
+                        >
+                          Dashboard
+                        </Button>
+                      </Link>
+                    ) : (
+                      <>
+                        <Button variant="ghost" colorScheme="white">
+                          Support
+                        </Button>
+                        <Link to="/login">
+                          <Button
+                            variant="ghost"
+                            mr="2"
+                            colorScheme="white"
+                            bg="rgb(255 117 101)"
+                          >
+                            Login
+                          </Button>
+                        </Link>
+                      </>
+                    )}
                   </ModalBody>
                 </ModalContent>
               </Modal>
@@ -128,7 +157,10 @@ function Banner() {
                 alt="video play"
                 loading="lazy"
                 width="130"
-                onClick={() => setIsModalOpen(true)}
+                onClick={() => {
+                  setIsModalOpen(true);
+                  handleResetImageClick();
+                }}
                 decoding="async"
                 data-nimg="1"
                 objectFit="cover"
