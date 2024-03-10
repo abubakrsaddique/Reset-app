@@ -18,7 +18,6 @@ import {
 import { useDisclosure } from "@chakra-ui/react";
 import ProfileForm from "../ProfileForm/ProfileForm";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../contexts/AuthContext";
 import { useAuth } from "../../contexts/AuthContext";
 
 function Dashboard() {
@@ -27,7 +26,11 @@ function Dashboard() {
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   const handleResetClick = () => {
-    navigate("/banner", { state: { isLoggedIn } });
+    if (isLoggedIn) {
+      navigate("/banner", { state: { isLoggedIn } });
+    } else {
+      navigate("/banner");
+    }
   };
 
   const handleLogoutClick = () => {

@@ -1,16 +1,16 @@
 import React from "react";
 import {
   BrowserRouter as Router,
-  Route,
   Routes,
+  Route,
   Navigate,
 } from "react-router-dom";
-import Banner from "./Components/Banner/Banner";
-import Signup from "./Components/Signup/Signup";
+import { useAuth } from "./contexts/AuthContext";
 import Login from "./Components/Login/Login";
 import Dashboard from "./Components/Dashboard/Dashboard";
+import Banner from "./Components/Banner/Banner";
+import Signup from "./Components/Signup/Signup";
 import ProfileForm from "./Components/ProfileForm/ProfileForm";
-import { useAuth } from "./contexts/AuthContext";
 
 function App() {
   const { isLoggedIn } = useAuth();
@@ -18,18 +18,18 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Banner />} />
-        <Route
-          path="/login"
-          element={isLoggedIn ? <Navigate to="/dashboard" /> : <Login />}
-        />
-        <Route
-          path="/signup"
-          element={isLoggedIn ? <Navigate to="/dashboard" /> : <Signup />}
-        />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/profileform" element={<ProfileForm />} />
         <Route path="/banner" element={<Banner />} />
+        <Route path="/profileform" element={<ProfileForm />} />
+
+        <Route
+          path="/"
+          element={isLoggedIn ? <Navigate to="/dashboard" /> : <Banner />}
+        />
+
         <Route
           path="*"
           element={

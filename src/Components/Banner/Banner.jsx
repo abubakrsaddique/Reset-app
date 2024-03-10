@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { HamburgerIcon, SmallCloseIcon } from "@chakra-ui/icons";
 import {
   Box,
@@ -26,8 +26,19 @@ function Banner() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { isLoggedIn } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+  const [isFromDashboard, setIsFromDashboard] = useState(false);
+
+  useEffect(() => {
+    if (location.state && location.state.fromDashboard) {
+      setIsFromDashboard(true);
+    }
+  }, [location.state]);
+
   const handleResetImageClick = () => {
-    navigate("/banner");
+    if (isLoggedIn) {
+      navigate("/banner", { state: { fromDashboard: true } });
+    }
   };
 
   return (
@@ -52,7 +63,18 @@ function Banner() {
               </Heading>
             </Box>
             <Box className="screen">
-              {isLoggedIn ? (
+              {isFromDashboard ? (
+                <Link to="/dashboard">
+                  <Button
+                    variant="ghost"
+                    mr="2"
+                    colorScheme="white"
+                    bg="rgb(255 117 101)"
+                  >
+                    Dashboard
+                  </Button>
+                </Link>
+              ) : isLoggedIn ? (
                 <Link to="/dashboard">
                   <Button
                     variant="ghost"
