@@ -1,6 +1,10 @@
 .loginbtn:hover {
   background-color: rgb(255, 117, 101);
 }
+.m-t {
+  cursor: "pointer";
+  margin-top: -25px;
+}
 .Welcome {
   line-height: 40px;
   letter-spacing: 0.96px;
@@ -12,4 +16,19 @@
   color: transparent;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #fff;
+}
+
+@media only screen and (max-width: 768px) {
+  .mobile-view-top {
+    height: fit-content;
+  }
+  .mob-img2 {
+    margin-top: 20%;
+  }
+
+  .mobile-view-bottom {
+    height: 52vh;
+    margin-top: 82%;
+    margin-left: -100%;
+  }
 }

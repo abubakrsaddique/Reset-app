@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { HamburgerIcon, SmallCloseIcon } from "@chakra-ui/icons";
 import {
   Box,
   Flex,
@@ -9,13 +8,13 @@ import {
   Modal,
   ModalOverlay,
   ModalContent,
-  ModalHeader,
-  ModalFooter,
   ModalBody,
+  ModalFooter,
   ModalCloseButton,
   useDisclosure,
   IconButton,
 } from "@chakra-ui/react";
+import { HamburgerIcon, SmallCloseIcon } from "@chakra-ui/icons";
 import { useAuth } from "../../contexts/AuthContext";
 import "./banner.css";
 import backgroundVideo from "../../Components/video/1.mp4";
@@ -27,11 +26,11 @@ function Banner() {
   const { isLoggedIn } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
-  const [isFromDashboard, setIsFromDashboard] = useState(false);
+  const isDashboardPage = location.pathname === "/dashboard";
 
   useEffect(() => {
     if (location.state && location.state.fromDashboard) {
-      setIsFromDashboard(true);
+      setIsModalOpen(true);
     }
   }, [location.state]);
 
@@ -63,18 +62,7 @@ function Banner() {
               </Heading>
             </Box>
             <Box className="screen">
-              {isFromDashboard ? (
-                <Link to="/dashboard">
-                  <Button
-                    variant="ghost"
-                    mr="2"
-                    colorScheme="white"
-                    bg="rgb(255 117 101)"
-                  >
-                    Dashboard
-                  </Button>
-                </Link>
-              ) : isLoggedIn ? (
+              {isLoggedIn ? (
                 <Link to="/dashboard">
                   <Button
                     variant="ghost"
@@ -112,7 +100,7 @@ function Banner() {
                   position="absolute"
                   top="4px"
                   right="4px"
-                  zIndex="999"
+                  zIndex={1}
                 />
               ) : (
                 <IconButton
@@ -136,7 +124,6 @@ function Banner() {
                   background="rgb(31,31,47)"
                   borderRadius="33px"
                   position="absolute"
-                  zIndex="99"
                 >
                   <ModalBody>
                     {isLoggedIn ? (
@@ -152,15 +139,24 @@ function Banner() {
                       </Link>
                     ) : (
                       <>
-                        <Button variant="ghost" colorScheme="white">
+                        <Button
+                          variant="ghost"
+                          colorScheme="white"
+                          color="white"
+                          marginLeft="36%"
+                          marginTop="5%"
+                        >
                           Support
                         </Button>
+                        <br />
                         <Link to="/login">
                           <Button
                             variant="ghost"
                             mr="2"
                             colorScheme="white"
                             bg="rgb(255 117 101)"
+                            marginLeft="39%"
+                            marginTop="2%"
                           >
                             Login
                           </Button>
@@ -174,8 +170,10 @@ function Banner() {
           </Flex>
           <Flex flexDirection="column" alignItems="center" p="4">
             <Heading as="h2" fontSize="120px" className="fitness-heading">
-              <span>FITNESS F</span>
+              <span className="fit">FITNESS </span>
+              <span className="fit-f  top fit-h">F</span>
               <img
+                className="fit-video top"
                 alt="video play"
                 loading="lazy"
                 width="130"
@@ -188,18 +186,29 @@ function Banner() {
                 objectFit="cover"
                 src={image2}
               />
-              <span>R</span>
+              <span className="fit-r top">R</span>
             </Heading>
-            <Heading as="h2" fontSize="110" className="culture-heading">
+            <Heading as="h2" fontSize="110px" className="culture-heading ">
               THE CULTURE
             </Heading>
+            <Heading fontSize="60px" className="c-h">
+              THE
+            </Heading>
+            <Heading fontSize="60px" className="c-h">
+              CULTURE
+            </Heading>
             <Box mt="4">
-              <span className="font-normal text-[16px]">
-                Get <b>ONE MONTH FREE</b> of Reset in celebration of Black
-                History Month
+              <span className="font-normal ">
+                Get <b>ONE MONTH FREE</b> of Reset in celebration of Black{" "}
+                <span
+                  className="font-normal f-n "
+                  style={{ marginRight: "5px" }}
+                >
+                  History Month
+                </span>
               </span>
               <Flex className="button-wrapper">
-                <Button colorScheme="blue" fontSize={18}>
+                <Button colorScheme="blue" fontSize={18} className="b-w">
                   Claim One Month Free Now
                 </Button>
               </Flex>
@@ -211,17 +220,12 @@ function Banner() {
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Image</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <img src={image2} alt="Banner Modal " style={{ width: "100%" }} />
+            <img src={image2} alt="Banner Modal" style={{ width: "100%" }} />
           </ModalBody>
           <ModalFooter>
-            <Button
-              colorScheme="blue"
-              mr={3}
-              onClick={() => setIsModalOpen(false)}
-            >
+            <Button colorScheme="blue" mr={3} onClick={onClose}>
               Close
             </Button>
           </ModalFooter>

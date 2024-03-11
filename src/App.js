@@ -33,7 +33,11 @@ function App() {
         <Route
           path="*"
           element={
-            isLoggedIn ? <Navigate to="/dashboard" /> : <Navigate to="/login" />
+            isLoggedIn ? (
+              <Navigate to="/dashboard" />
+            ) : (
+              <Navigate to="/banner" />
+            )
           }
         />
       </Routes>

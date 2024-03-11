@@ -45,7 +45,12 @@ function Login() {
 
   return (
     <Flex height="100vh">
-      <Box flex="1" style={backgroundImageStyle} position="relative">
+      <Box
+        flex="1"
+        style={backgroundImageStyle}
+        position="relative"
+        className="mobile-view-top"
+      >
         <Flex
           height="100%"
           alignItems="center"
@@ -76,14 +81,7 @@ function Login() {
             height="50"
             marginTop="-3"
           >
-            <img
-              src={image2}
-              alt="Image2"
-              style={{
-                cursor: "pointer",
-                marginTop: "-25px",
-              }}
-            />
+            <img className="mob-img2 m-t" src={image2} alt="Image2" />
           </Link>
         </Flex>
         <Flex
@@ -112,7 +110,12 @@ function Login() {
         </Flex>
       </Box>
 
-      <Box flex="1" bg="rgb(4,4,21)" color="white">
+      <Box
+        flex="1"
+        bg="rgb(4,4,21)"
+        color="white"
+        className="mobile-view-bottom"
+      >
         <Flex
           height="100%"
           alignItems="center"

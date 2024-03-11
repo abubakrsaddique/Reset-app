@@ -60,7 +60,12 @@ function Signup() {
 
   return (
     <Flex height="100vh">
-      <Box flex="1" style={backgroundImageStyle} position="relative">
+      <Box
+        flex="1"
+        style={backgroundImageStyle}
+        position="relative"
+        className="mobile-view-t"
+      >
         <Flex
           height="100%"
           alignItems="center"
@@ -122,7 +127,7 @@ function Signup() {
         </Flex>
       </Box>
 
-      <Box flex="1" bg="rgb(4,4,21)" color="white">
+      <Box flex="1" bg="rgb(4,4,21)" color="white" className="mobile-view-b">
         <Flex
           height="100%"
           alignItems="center"

@@ -19,6 +19,9 @@
 .mob {
   display: none;
 }
+.c-h {
+  display: none;
+}
 
 .banner-text {
   margin-right: auto;
@@ -41,7 +44,9 @@
   -webkit-text-stroke-color: #fff;
   display: inline-flex;
 }
-
+.fit-h {
+  margin-left: 15px;
+}
 .culture-heading {
   margin-bottom: 8px;
 }
@@ -70,6 +75,9 @@
     padding: 0;
     position: relative;
   }
+  .icon-button {
+    z-index: 1;
+  }
 
   .banner-content video {
     width: 100%;
@@ -93,19 +101,44 @@
     display: flex;
     width: 20%;
   }
-  .fitness-heading {
-    font-size: 80px;
+  .fit {
+    font-size: 65px;
+    margin-left: 90px;
   }
-
+  .fit-f {
+    font-size: 65px;
+    margin-top: 78px;
+    margin-left: -46%;
+  }
+  .fit-video {
+    height: 80px;
+    width: 80px;
+    margin-top: 78px;
+    margin-left: 11px;
+  }
+  .fit-r {
+    font-size: 65px;
+    margin-top: 78px;
+    margin-left: 10px;
+  }
+  .top {
+    margin-top: 20%;
+  }
   .culture-heading {
-    font-size: 90px;
+    display: none;
+  }
+  .c-h {
+    display: inline;
   }
 
   .font-normal {
     font-size: 14px;
   }
+  .f-n {
+    margin-left: 134px;
+  }
 
-  .button-wrapper {
-    flex-direction: column;
+  .b-w {
+    width: 250px;
   }
 }
