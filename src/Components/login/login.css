@@ -42,8 +42,8 @@
     margin-bottom: -20%;
   }
   .mobile-view-bottom {
-    height: 52vh;
-    margin-top: 82%;
+    height: 70vh;
+    margin-top: 67%;
     margin-left: -100%;
   }
   .log-in {
@@ -54,7 +54,8 @@
     margin-left: -13%;
     margin-top: -8px;
   }
-  .form-input-login {
-    width: 50%;
+  .forgot {
+    margin-right: 32%;
+    margin-top: -4px;
   }
 }

@@ -132,14 +132,8 @@ function Login() {
             </Link>
             <Box />
           </Text>
-          <FormControl
-            id="email"
-            mb="4"
-            width="50%"
-            className="form-input-login"
-          >
+          <FormControl id="email" mb="4" width={{ base: "100%", md: "50%" }}>
             <Input
-              className="form-input-login"
               fontWeight="bold"
               type="email"
               placeholder="Email"
@@ -151,9 +145,8 @@ function Login() {
               onChange={(e) => setEmail(e.target.value)}
             />
           </FormControl>
-          <FormControl id="password" mb="4" width="50%">
+          <FormControl id="password" mb="4" width={{ base: "100%", md: "50%" }}>
             <Input
-              className="form-input-login"
               fontWeight="bold"
               type="password"
               placeholder="Enter your password"
@@ -172,6 +165,7 @@ function Login() {
             color="rgb(255,117,101)"
             fontWeight="bold"
             paddingRight="30%"
+            className="forgot"
           >
             Forgot password?
           </Link>
@@ -179,7 +173,7 @@ function Login() {
           <Button
             className="loginbtn"
             colorScheme="blue"
-            width="50%"
+            width={{ base: "100%", md: "50%" }}
             bg="rgb(255,117,101)"
             fontWeight="bold"
             rounded="22px"
