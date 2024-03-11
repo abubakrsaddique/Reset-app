@@ -60,27 +60,16 @@ function Login() {
         >
           <Link as={RouterLink} to="/banner">
             <Heading
-              className="Welcome"
+              className="Welcome wl"
               as="h2"
               fontSize={40}
               fontWeight="bold"
-              mb="4"
               style={{ cursor: "pointer" }}
-              marginLeft="6"
-              marginBottom="-70"
             >
               WELCOME TO
             </Heading>
           </Link>
-          <Link
-            as={RouterLink}
-            to="/banner"
-            marginLeft="10"
-            marginBottom="220"
-            width="80%"
-            height="50"
-            marginTop="-3"
-          >
+          <Link as={RouterLink} to="/banner">
             <img className="mob-img2 m-t" src={image2} alt="Image2" />
           </Link>
         </Flex>
@@ -94,6 +83,7 @@ function Login() {
           cursor="pointer"
         >
           <img
+            className="logo-1"
             src={appleLogo}
             alt="Apple Logo"
             width="150"
@@ -101,6 +91,7 @@ function Login() {
             style={{ marginRight: "16px" }}
           />
           <img
+            className="logo-1"
             src={googleLogo}
             alt="Google Logo"
             width="150"
@@ -129,19 +120,26 @@ function Login() {
             fontWeight="bold"
             paddingRight="30%"
             mb="4"
+            className="log-in"
           >
             Log In
           </Heading>
 
-          <Text mb="4" fontWeight="bold" paddingRight="10%">
+          <Text mb="4" fontWeight="bold" paddingRight="10%" className="tex-t">
             You don’t have an account?{" "}
             <Link as={RouterLink} to="/signup" color="rgb(255,117,101)">
               Sign Up
             </Link>
             <Box />
           </Text>
-          <FormControl id="email" mb="4" width="50%">
+          <FormControl
+            id="email"
+            mb="4"
+            width="50%"
+            className="form-input-login"
+          >
             <Input
+              className="form-input-login"
               fontWeight="bold"
               type="email"
               placeholder="Email"
@@ -155,6 +153,7 @@ function Login() {
           </FormControl>
           <FormControl id="password" mb="4" width="50%">
             <Input
+              className="form-input-login"
               fontWeight="bold"
               type="password"
               placeholder="Enter your password"

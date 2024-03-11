@@ -3,7 +3,10 @@
 }
 .m-t {
   cursor: "pointer";
-  margin-top: -25px;
+  margin-left: 10%;
+  width: 80%;
+  height: 50;
+  margin-top: -4%;
 }
 .Welcome {
   line-height: 40px;
@@ -16,19 +19,42 @@
   color: transparent;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #fff;
+  margin-left: 6px;
+  margin-bottom: -24%;
 }
 
 @media only screen and (max-width: 768px) {
   .mobile-view-top {
-    height: fit-content;
+    height: 50vh;
   }
   .mob-img2 {
-    margin-top: 20%;
+    margin-top: 6%;
+    width: 100%;
+    margin-left: 0px;
   }
 
+  .wl {
+    margin-top: 10%;
+  }
+
+  .logo-1 {
+    width: 70%;
+    margin-bottom: -20%;
+  }
   .mobile-view-bottom {
     height: 52vh;
     margin-top: 82%;
     margin-left: -100%;
+  }
+  .log-in {
+    margin-left: -33%;
+    margin-top: 20%;
+  }
+  .tex-t {
+    margin-left: -13%;
+    margin-top: -8px;
+  }
+  .form-input-login {
+    width: 50%;
   }
 }
