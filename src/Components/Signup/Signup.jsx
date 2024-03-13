@@ -59,7 +59,7 @@ function Signup() {
   };
 
   return (
-    <Flex height="100vh">
+    <Flex height="fit-content">
       <Box
         flex="1"
         style={backgroundImageStyle}

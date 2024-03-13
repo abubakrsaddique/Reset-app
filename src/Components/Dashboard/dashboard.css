@@ -1,3 +1,10 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.dashboard {
+  height: 200vh;
+}
 .password {
   margin-left: 76%;
 }
@@ -71,6 +78,9 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .dashboard-mb {
+    height: fit-content;
+  }
   /* My Account */
   .s-1-f {
     gap: 43%;

@@ -39,7 +39,10 @@ function Dashboard() {
   };
 
   return (
-    <div style={{ backgroundColor: "rgb(4,4,21)", height: "fit-content" }}>
+    <div
+      style={{ backgroundColor: "rgb(4,4,21)" }}
+      className="dashboard dashboard-mb"
+    >
       <main>
         <Flex
           justify="space-between"
