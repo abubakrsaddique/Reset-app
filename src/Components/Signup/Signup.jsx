@@ -75,27 +75,24 @@ function Signup() {
         >
           <Link as={RouterLink} to="/banner">
             <Heading
-              className="Welcome"
+              className="Welcome-sign wl-sign"
               as="h2"
               fontSize={40}
               fontWeight="bold"
               mb="4"
               cursor="pointer"
               marginBottom="-70"
-              marginLeft="6"
-              marginTop="90"
             >
               WELCOME TO
             </Heading>
           </Link>
           <Link as={RouterLink} to="/banner" height="50" marginTop="-3">
             <img
+              className="mob-imgsign m-t-sign"
               src={image2}
               alt="Image2"
               style={{
                 cursor: "pointer",
-                marginLeft: "100px",
-                marginBottom: "97px",
               }}
               width="70%"
             />
@@ -111,6 +108,7 @@ function Signup() {
           cursor="pointer"
         >
           <img
+            className="logo-1-sign"
             src={appleLogo}
             alt="Apple Logo"
             width="150"
@@ -118,6 +116,7 @@ function Signup() {
             style={{ marginRight: "16px" }}
           />
           <img
+            className="logo-1-sign"
             src={googleLogo}
             alt="Google Logo"
             width="150"
@@ -136,6 +135,7 @@ function Signup() {
           flexDirection="column"
         >
           <Heading
+            className="sign-up"
             as="h2"
             fontSize={45}
             fontWeight="bold"
@@ -145,9 +145,14 @@ function Signup() {
             Sign Up
           </Heading>
 
-          <Text mb="4" fontWeight="bold" paddingRight="27%">
+          <Text
+            mb="4"
+            fontWeight="bold"
+            paddingRight="27%"
+            className="text-signup"
+          >
             Already have an account?{" "}
-            <Link to="/login" color="rgb(255,117,101)">
+            <Link to="/login" className="link-login">
               Log In
             </Link>
           </Text>
@@ -158,11 +163,16 @@ function Signup() {
             fontWeight="bold"
             mb="4"
             paddingRight="25%"
+            className="c-a"
           >
             Create Your Account
           </Heading>
 
-          <FormControl id="first-name" mb="4" width="60%" marginRight="5%">
+          <FormControl
+            id="first-name"
+            mb="4"
+            width={{ base: "100%", md: "60%" }}
+          >
             <Input
               fontWeight="bold"
               type="text"
@@ -174,7 +184,11 @@ function Signup() {
             />
           </FormControl>
 
-          <FormControl id="last-name" mb="4" width="60%" marginRight="5%">
+          <FormControl
+            id="last-name"
+            mb="4"
+            width={{ base: "100%", md: "60%" }}
+          >
             <Input
               fontWeight="bold"
               type="text"
@@ -186,7 +200,7 @@ function Signup() {
             />
           </FormControl>
 
-          <FormControl id="email" mb="4" width="60%" marginRight="5%">
+          <FormControl id="email" mb="4" width={{ base: "100%", md: "60%" }}>
             <Input
               fontWeight="bold"
               type="email"
@@ -198,7 +212,7 @@ function Signup() {
             />
           </FormControl>
 
-          <FormControl id="password" mb="4" width="60%" marginRight="5%">
+          <FormControl id="password" mb="4" width={{ base: "100%", md: "60%" }}>
             <Input
               fontWeight="bold"
               type="password"
@@ -211,26 +225,26 @@ function Signup() {
           </FormControl>
 
           <Button
+            width={{ base: "100%", md: "60%" }}
             className="loginbtn"
             colorScheme="blue"
-            width="60%"
             bg="rgb(255,117,101)"
             fontWeight="bold"
             rounded="22px"
             height="14"
             _hover={{ bg: "rgb(255,117,101)" }}
             mb="4"
-            marginRight="5%"
             onClick={handleSignup}
           >
             Get Started
           </Button>
 
           <Text
+            className="text-signup-2"
             fontSize="sm"
             paddingRight="5%"
             color="rgb(124 126 129)"
-            fontWeight="bold"
+            fontWeight=""
           >
             SECURED CHECKOUT WITH 256-BIT SSL ENCRYPTION
           </Text>

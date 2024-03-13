@@ -1,6 +1,9 @@
 .password {
   margin-left: 76%;
 }
+.my-profile-box-width {
+  min-width: 450px;
+}
 .myplan {
   display: flex;
   justify-content: flex-end;
@@ -36,4 +39,136 @@
 }
 .Email-Card {
   margin-left: 56%;
+}
+.section-1-flex {
+  gap: 23%;
+  margin-top: 5%;
+}
+.my-account {
+  margin-left: 165px;
+}
+.my-account-box-detail {
+  margin-left: 165px;
+  width: 37%;
+}
+.my-account-email {
+  margin-left: 60%;
+}
+.myplan-flex {
+  gap: 128%;
+}
+.myplan-heading {
+  margin-left: -140%;
+}
+.my-profile-edit-btn {
+  margin-left: 63.5%;
+}
+.my-payment-method-flex {
+  gap: 44.5%;
+}
+.my-payment-method-box-width {
+  min-width: 450px;
+}
+
+@media only screen and (max-width: 768px) {
+  /* My Account */
+  .s-1-f {
+    gap: 43%;
+    margin-top: 10%;
+  }
+  .myaccount {
+    margin-left: 20px;
+  }
+  .my-a-b-d {
+    margin-left: 18px;
+    width: 90%;
+  }
+  .my-account-email-mb {
+    margin-left: 37%;
+  }
+  .password-mb {
+    margin-left: auto;
+  }
+
+  /* My Plan */
+
+  .myplan-flex-mb {
+    gap: 70%;
+    margin-top: 85%;
+  }
+  .myplan-heading-mb {
+    margin-left: -81px;
+  }
+
+  .plan-box-mb {
+    width: 127%;
+    margin-left: -32%;
+    text-wrap: nowrap;
+  }
+  .plan-box-value-mb {
+    margin-left: -18%;
+  }
+
+  /* My Profile */
+  .section-profile {
+    margin-top: -4%;
+  }
+  .my-profile-flex {
+    margin-left: -141px;
+  }
+  .my-profile-edit-btn-mb {
+    margin-left: 50%;
+  }
+
+  .my-profile-box {
+    width: 79%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .my-profile-detail-box {
+    width: 157%;
+    margin-left: -60%;
+  }
+  .age-mb {
+    margin-left: 83%;
+  }
+  .Height-mb {
+    margin-left: 67%;
+  }
+  .Weight-mb {
+    margin-left: 69%;
+  }
+  .Goal-mb {
+    margin-left: 59%;
+  }
+  .Amount-mb {
+    margin-left: 35%;
+  }
+  .my-profile-box-width-mob {
+    min-width: 100%;
+  }
+
+  /* My Payment */
+  .my-payment-method {
+    margin-top: 34%;
+  }
+  .my-payment-method-flex {
+    gap: 10%;
+  }
+  .my-payment-method-box-width-mb {
+    min-width: 172%;
+    margin-right: -77%;
+  }
+  .Credit-mb {
+    margin-left: 32%;
+  }
+  .Card-mb {
+    margin-left: 26%;
+  }
+  .Expiry-mb {
+    margin-left: 52%;
+  }
+  .Email-Card-mb {
+    margin-left: 32%;
+  }
 }

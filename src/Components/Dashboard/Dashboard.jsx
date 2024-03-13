@@ -39,7 +39,7 @@ function Dashboard() {
   };
 
   return (
-    <div style={{ backgroundColor: "rgb(4,4,21)", height: "200vh" }}>
+    <div style={{ backgroundColor: "rgb(4,4,21)", height: "fit-content" }}>
       <main>
         <Flex
           justify="space-between"
@@ -129,18 +129,17 @@ function Dashboard() {
         <section>
           <Box>
             <Flex
+              className="section-1-flex s-1-f"
               justify="between"
               alignItems="center"
               w="full"
-              gap="23%"
-              marginTop="5%"
             >
               <Text
+                className="myaccount my-account"
                 fontSize="25px"
                 fontWeight="bold"
                 lineHeight="6"
                 color="white"
-                marginLeft="165px"
               >
                 MyAccount
               </Text>
@@ -160,8 +159,7 @@ function Dashboard() {
               </div>
             </Flex>
             <Box
-              marginLeft="160px"
-              width="37%"
+              className="my-account-box-detail my-a-b-d"
               height="145px"
               bg="rgb(22,22,38)"
               rounded="24px"
@@ -179,11 +177,11 @@ function Dashboard() {
                   Email
                 </Text>
                 <Text
+                  className="my-account-email my-account-email-mb"
                   fontSize="sm"
                   fontWeight="bold"
                   lineHeight="5"
                   color="rgb(141,157,188)"
-                  marginLeft="60%"
                   paddingTop="12px"
                 >
                   trialmonth@gmail.com
@@ -200,7 +198,7 @@ function Dashboard() {
                   Password
                 </Text>
                 <Text
-                  className="password"
+                  className="password password-mb"
                   fontSize="sm"
                   fontWeight="bold"
                   lineHeight="5"
@@ -214,13 +212,17 @@ function Dashboard() {
         </section>
         <section className="myplan">
           <Box>
-            <Flex justify="between" alignItems="center" gap="128%">
+            <Flex
+              justify="between"
+              alignItems="center"
+              className="myplan-flex myplan-flex-mb"
+            >
               <Text
+                className="myplan-heading myplan-heading-mb"
                 fontSize="25px"
                 fontWeight="bold"
                 lineHeight="6"
                 color="white"
-                marginLeft="-140%"
               >
                 My Plan
               </Text>
@@ -238,7 +240,7 @@ function Dashboard() {
               </Button>
             </Flex>
             <Box
-              className="plan-box"
+              className="plan-box plan-box-mb"
               bg="rgb(22,22,38)"
               rounded="24px"
               p="7"
@@ -260,6 +262,7 @@ function Dashboard() {
                   </span>
                 </Text>
                 <Text
+                  className="plan-box-value-mb"
                   gap="10px"
                   fontSize="15px"
                   fontWeight="bold"
@@ -273,14 +276,20 @@ function Dashboard() {
           </Box>
         </section>
         <section>
-          <Box py="6" px="4">
+          <Box py="6" px="4" className="section-profile">
             <Flex marginLeft="141px">
-              <Box maxW="530px" w="100%" minW="450px" minH="450px">
+              <Box
+                maxW="530px"
+                w="100%"
+                minH="450px"
+                className="my-profile-box-width  my-profile-box-width-mob"
+              >
                 <Flex
                   justify="between"
                   alignItems="center"
                   marginTop="10%"
                   whiteSpace="nowrap"
+                  className="my-profile-flex"
                 >
                   <Text
                     fontSize="25px"
@@ -292,6 +301,7 @@ function Dashboard() {
                     My Profile
                   </Text>
                   <Button
+                    className="my-profile-edit-btn my-profile-edit-btn-mb "
                     type="button"
                     color="rgb(255,117,101)"
                     fontSize="20px"
@@ -299,7 +309,6 @@ function Dashboard() {
                     lineHeight="6"
                     bg="none"
                     _hover="none"
-                    marginLeft="63.5%"
                     cursor="pointer"
                     onClick={onOpen}
                   >
@@ -307,6 +316,7 @@ function Dashboard() {
                   </Button>
                 </Flex>
                 <Box
+                  className="my-profile-detail-box"
                   bg="rgb(22,22,38)"
                   rounded="24px"
                   p="6"
@@ -340,7 +350,7 @@ function Dashboard() {
                       color="rgb(141,157,188)"
                       paddingTop="10px"
                       paddingBottom="10px"
-                      className="age"
+                      className="age age-mb"
                     >
                       23
                     </Text>
@@ -364,7 +374,7 @@ function Dashboard() {
                       color="rgb(141,157,188)"
                       paddingTop="10px"
                       paddingBottom="10px"
-                      className="Height"
+                      className="Height Height-mb"
                     >
                       5ft 0in
                     </Text>
@@ -386,7 +396,7 @@ function Dashboard() {
                       lineHeight="5"
                       color="rgb(141,157,188)"
                       paddingTop="10px"
-                      className="Weight"
+                      className="Weight Weight-mb"
                     >
                       70 kg
                     </Text>
@@ -408,7 +418,7 @@ function Dashboard() {
                       lineHeight="5"
                       color="rgb(141,157,188)"
                       paddingTop="10px"
-                      className="Goal"
+                      className="Goal Goal-mb"
                     >
                       Lose Weight
                     </Text>
@@ -430,7 +440,7 @@ function Dashboard() {
                       lineHeight="5"
                       color="rgb(141,157,188)"
                       paddingTop="10px"
-                      className="Amount"
+                      className="Amount Amount-mb"
                     >
                       6 meals
                     </Text>
@@ -443,12 +453,18 @@ function Dashboard() {
         <section className="my-payment-method">
           <Box py="6" px="4" marginTop="-37%">
             <Flex justifyContent="flex-end" marginTop="-2%" marginRight="157px">
-              <Box maxW="510px" w="100%" minW="450px" minH="450px">
+              <Box
+                maxW="510px"
+                w="100%"
+                minW="450px"
+                minH="450px"
+                className="my-payment-method-box-width my-payment-method-box-width-mb"
+              >
                 <Flex
                   justify="between"
                   alignItems="center"
                   whiteSpace="nowrap"
-                  gap="44.5%"
+                  className="my-payment-method-flex my-payment-method-flex-mb "
                 >
                   <Text
                     fontSize="25px"
@@ -496,7 +512,7 @@ function Dashboard() {
                       color="rgb(141,157,188)"
                       paddingTop="10px"
                       paddingBottom="10px"
-                      className="Credit"
+                      className="Credit Credit-mb"
                     >
                       Credit Card
                     </Text>
@@ -520,7 +536,7 @@ function Dashboard() {
                       color="rgb(141,157,188)"
                       paddingTop="10px"
                       paddingBottom="10px"
-                      className="Card"
+                      className="Card Card-mb"
                     >
                       •••• •••• •••• 1234
                     </Text>
@@ -544,7 +560,7 @@ function Dashboard() {
                       color="rgb(141,157,188)"
                       paddingTop="10px"
                       paddingBottom="10px"
-                      className="Expiry"
+                      className="Expiry Expiry-mb"
                     >
                       01/2000
                     </Text>
@@ -568,7 +584,7 @@ function Dashboard() {
                       color="rgb(141,157,188)"
                       paddingTop="10px"
                       paddingBottom="10px"
-                      className="Email-Card"
+                      className="Email-Card Email-Card-mb"
                     >
                       trialmonth@gmail.com
                     </Text>

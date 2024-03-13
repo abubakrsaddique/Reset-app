@@ -1,10 +1,62 @@
+.Welcome-sign {
+  line-height: 40px;
+  letter-spacing: 0.96px;
+  font-style: normal;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #fff;
+  margin-left: 6px;
+  margin-top: 0px;
+}
+.link-login {
+  color: rgb(255, 117, 101);
+}
+
+.m-t-sign {
+  cursor: "pointer";
+  margin-left: 10%;
+  width: 80%;
+  height: 50;
+  margin-top: -4%;
+}
 @media only screen and (max-width: 768px) {
   .mobile-view-t {
     height: fit-content;
   }
   .mobile-view-b {
-    height: 95vh;
-    margin-top: 82%;
+    height: fit-content;
+    margin-top: 68%;
     margin-left: -100%;
+  }
+  .mob-imgsign {
+    margin-top: 6%;
+    width: 100%;
+    margin-left: 0px;
+  }
+  .wl-sign {
+    margin-top: 11px;
+  }
+  .logo-1-sign {
+    width: 70%;
+    margin-bottom: -20%;
+  }
+  .sign-up {
+    margin-left: -10%;
+    margin-top: 0%;
+  }
+  .text-signup {
+    margin-left: -2%;
+    margin-top: -8px;
+  }
+  .c-a {
+    margin-left: 1px;
+  }
+  .text-signup-2 {
+    margin-left: 25px;
+    width: 107%;
   }
 }
