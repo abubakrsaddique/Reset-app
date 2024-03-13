@@ -61,6 +61,7 @@ function Dashboard() {
             <Button
               backgroundColor="transparent"
               _hover="none"
+              color="none"
               onClick={handleLogoutClick}
             >
               <Text
@@ -456,7 +457,6 @@ function Dashboard() {
               <Box
                 maxW="510px"
                 w="100%"
-                minW="450px"
                 minH="450px"
                 className="my-payment-method-box-width my-payment-method-box-width-mb"
               >
