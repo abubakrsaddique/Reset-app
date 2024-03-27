@@ -19,6 +19,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 import "./banner.css";
 import backgroundVideo from "../../Components/video/1.mp4";
 import image2 from "../../Components/video/2.webp";
+import close from "../../Components/video/close.png";
 
 function Banner() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -95,15 +96,26 @@ function Banner() {
             </Box>
             <Box className="mob" position="relative">
               {isOpen ? (
-                <IconButton
+                <Button
                   aria-label="Close"
-                  icon={<SmallCloseIcon />}
                   onClick={onClose}
                   position="absolute"
                   top="4px"
                   right="4px"
-                  zIndex={1}
-                />
+                  zIndex="2"
+                  background="none"
+                  border="none"
+                  padding="0"
+                  cursor="pointer"
+                >
+                  <img
+                    src={close}
+                    alt="Close"
+                    width="30px"
+                    height="30px"
+                    zIndex="0"
+                  />
+                </Button>
               ) : (
                 <IconButton
                   background="none"
@@ -122,10 +134,11 @@ function Banner() {
                   width="100%"
                   height="25vh"
                   paddingTop="16px"
-                  bottom="60%"
+                  bottom="70%"
                   background="rgb(31,31,47)"
                   borderRadius="33px"
                   position="absolute"
+                  zIndex="1"
                 >
                   <ModalBody>
                     {isLoggedIn ? (
@@ -135,6 +148,8 @@ function Banner() {
                           mr="2"
                           colorScheme="white"
                           bg="rgb(255 117 101)"
+                          marginTop="65px"
+                          width="100%"
                         >
                           Dashboard
                         </Button>
@@ -145,8 +160,9 @@ function Banner() {
                           variant="ghost"
                           colorScheme="white"
                           color="white"
-                          marginLeft="36%"
-                          marginTop="5%"
+                          marginLeft="0px"
+                          marginTop="15%"
+                          width="100%"
                         >
                           Support
                         </Button>
@@ -159,8 +175,9 @@ function Banner() {
                             mr="2"
                             colorScheme="white"
                             bg="rgb(255 117 101)"
-                            marginLeft="39%"
-                            marginTop="2%"
+                            marginLeft="0px"
+                            marginTop="5%"
+                            width="100%"
                           >
                             Login
                           </Button>
