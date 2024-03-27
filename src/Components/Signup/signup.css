@@ -25,11 +25,11 @@
 }
 @media only screen and (max-width: 768px) {
   .mobile-view-t {
-    height: fit-content;
+    height: 50vh;
   }
   .mobile-view-b {
-    height: fit-content;
-    margin-top: 68%;
+    height: 72vh;
+    margin-top: 108%;
     margin-left: -100%;
   }
   .mob-imgsign {
