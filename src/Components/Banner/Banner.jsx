@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import {
   Box,
@@ -15,7 +15,7 @@ import {
   IconButton,
 } from "@chakra-ui/react";
 import { HamburgerIcon, SmallCloseIcon } from "@chakra-ui/icons";
-import { useAuth } from "../../contexts/AuthContext";
+import { AuthContext } from "../../contexts/AuthContext";
 import "./banner.css";
 import backgroundVideo from "../../Components/video/1.mp4";
 import image2 from "../../Components/video/2.webp";
@@ -23,7 +23,7 @@ import image2 from "../../Components/video/2.webp";
 function Banner() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { isLoggedIn } = useAuth();
+  const { isLoggedIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const isDashboardPage = location.pathname === "/dashboard";
@@ -41,7 +41,7 @@ function Banner() {
   };
 
   return (
-    <>
+    <Box overflow="hidden" height="100vh" width="100">
       <Box position="relative" className="banner-content">
         <video
           autoPlay
@@ -79,6 +79,8 @@ function Banner() {
                     Support
                   </Button>
                   <Link to="/login">
+                    {" "}
+                    {/* Link to the login page */}
                     <Button
                       variant="ghost"
                       mr="2"
@@ -150,6 +152,8 @@ function Banner() {
                         </Button>
                         <br />
                         <Link to="/login">
+                          {" "}
+                          {/* Link to the login page */}
                           <Button
                             variant="ghost"
                             mr="2"
@@ -231,7 +235,7 @@ function Banner() {
           </ModalFooter>
         </ModalContent>
       </Modal>
-    </>
+    </Box>
   );
 }
 

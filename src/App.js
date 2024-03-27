@@ -1,46 +1,44 @@
-import React from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
-import { useAuth } from "./contexts/AuthContext";
+import React, { useContext } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./Components/Login/Login";
+import Signup from "./Components/Signup/Signup";
+import { AuthContext } from "./contexts/AuthContext";
+import PublicRoute from "./routes/PublicRoute";
+import PrivateRoute from "./routes/PrivateRoute";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Banner from "./Components/Banner/Banner";
-import Signup from "./Components/Signup/Signup";
 import ProfileForm from "./Components/ProfileForm/ProfileForm";
+import NotFound from "./Components/NotFound";
+import "../src/App.css";
 
 function App() {
-  const { isLoggedIn } = useAuth();
+  const { loading, user } = useContext(AuthContext);
 
   return (
     <Router>
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+      {!loading && (
+        <Routes>
+          {/* public and restricted routes */}
+          <Route element={<PublicRoute />}>
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+          </Route>
 
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/banner" element={<Banner />} />
-        <Route path="/profileform" element={<ProfileForm />} />
+          {/* public and not restricted routes */}
+          <Route element={<PublicRoute />}>
+            <Route path="/" element={<Banner />} />
+          </Route>
 
-        <Route
-          path="/"
-          element={isLoggedIn ? <Navigate to="/dashboard" /> : <Banner />}
-        />
+          {/* protected routes */}
+          <Route element={<PrivateRoute />}>
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/profile" element={<ProfileForm />} />
+          </Route>
 
-        <Route
-          path="*"
-          element={
-            isLoggedIn ? (
-              <Navigate to="/dashboard" />
-            ) : (
-              <Navigate to="/banner" />
-            )
-          }
-        />
-      </Routes>
+          {/* Not Found routes */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      )}
     </Router>
   );
 }

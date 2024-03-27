@@ -1,3 +1,4 @@
+import React, { useContext } from "react";
 import reset from "../../Components/video/reset.png";
 import image3 from "../../Components/video/7.webp";
 import appleLogo from "../../Components/video/apple.webp";
@@ -18,11 +19,11 @@ import {
 import { useDisclosure } from "@chakra-ui/react";
 import ProfileForm from "../ProfileForm/ProfileForm";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../contexts/AuthContext";
+import { AuthContext } from "../../contexts/AuthContext";
 
 function Dashboard() {
   const navigate = useNavigate();
-  const { logout, isLoggedIn } = useAuth();
+  const { logout, isLoggedIn } = useContext(AuthContext);
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   const handleResetClick = () => {
