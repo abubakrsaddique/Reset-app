@@ -28,15 +28,15 @@ function Dashboard() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const handleResetClick = () => {
     if (isLoggedIn) {
-      navigate("/banner", { state: { isLoggedIn } });
+      navigate("/", { state: { isLoggedIn } });
     } else {
-      navigate("/banner");
+      navigate("/");
     }
   };
 
   const handleLogoutClick = () => {
     logout();
-    navigate("/banner");
+    navigate("/");
   };
 
   return (

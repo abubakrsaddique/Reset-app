@@ -2,9 +2,10 @@
   padding: 0;
   margin: 0;
 }
-.dashboard {
+/* .dashboard {
   height: 200vh;
-}
+  height: fit-content;
+} */
 .password {
   margin-left: 76%;
 }
