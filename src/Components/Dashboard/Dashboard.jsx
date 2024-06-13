@@ -462,6 +462,7 @@ function Dashboard() {
                 maxW="510px"
                 w="100%"
                 minH="450px"
+                mr="-130px"
                 className="my-payment-method-box-width my-payment-method-box-width-mb"
               >
                 <Flex
