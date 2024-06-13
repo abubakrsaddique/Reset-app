@@ -7,6 +7,7 @@ The React Firebase Authentication Guide provides step-by-step instructions and c
 
 ## Preview
 
+https://github.com/abubakrsaddique/Reset-app/assets/141554894/3e8000e0-aa94-4a17-8467-1bcff2cbfc62
 
 
 ## Features
