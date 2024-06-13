@@ -28,9 +28,9 @@ function Dashboard() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const handleResetClick = () => {
     if (isLoggedIn) {
-      navigate("/", { state: { isLoggedIn } });
+      navigate("/banner", { state: { isLoggedIn } });
     } else {
-      navigate("/");
+      navigate("/banner");
     }
   };
 
